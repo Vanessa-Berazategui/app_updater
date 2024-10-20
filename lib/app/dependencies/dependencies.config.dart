@@ -35,8 +35,7 @@ import 'package:flutter_ddd_skeleton_monorepo/app/theme/material_theme.dart'
     as _i3;
 import 'package:flutter_ddd_skeleton_monorepo/counter/counter.dart' as _i12;
 import 'package:app_updater_data/app_updater_data.dart' as _i7;
-import 'package:flutter_ddd_skeleton_monorepo_domain/flutter_ddd_skeleton_monorepo_domain.dart'
-    as _i11;
+import 'package:app_updater_domain/app_updater_domain.dart' as _i11;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i4;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;

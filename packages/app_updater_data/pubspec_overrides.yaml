@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: flutter_ddd_skeleton_monorepo_domain
+# melos_managed_dependency_overrides: app_updater_domain
 dependency_overrides:
-  flutter_ddd_skeleton_monorepo_domain:
-    path: ../flutter_ddd_skeleton_monorepo_domain
+  app_updater_domain:
+    path: ../app_updater_domain

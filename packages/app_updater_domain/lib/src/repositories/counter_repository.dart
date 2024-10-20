@@ -1,5 +1,5 @@
 // Project imports:
-import 'package:flutter_ddd_skeleton_monorepo_domain/flutter_ddd_skeleton_monorepo_domain.dart';
+import 'package:app_updater_domain/app_updater_domain.dart';
 
 abstract interface class CounterRepository extends BaseRepository {
   Future<Result<int>> getCounter(NoParams params);

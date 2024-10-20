@@ -1,6 +1,6 @@
 import 'package:flutter_ddd_skeleton_monorepo/app/app.dart';
 import 'package:flutter_ddd_skeleton_monorepo/counter/counter.dart';
-import 'package:flutter_ddd_skeleton_monorepo_domain/flutter_ddd_skeleton_monorepo_domain.dart';
+import 'package:app_updater_domain/app_updater_domain.dart';
 
 class CounterView extends StatelessWidget {
   const CounterView({

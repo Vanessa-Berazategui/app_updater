@@ -14,8 +14,8 @@ dependencies:
   flutter_bloc: ^8.1.3
   app_updater_data:
     path: packages/app_updater_data
-  flutter_ddd_skeleton_monorepo_domain:
-    path: packages/flutter_ddd_skeleton_monorepo_domain
+  app_updater_domain:
+    path: packages/app_updater_domain
   flutter_localizations:
     sdk: flutter
   flutter_secure_storage: ^9.0.0

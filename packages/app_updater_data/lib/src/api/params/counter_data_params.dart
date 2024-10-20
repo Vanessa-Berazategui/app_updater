@@ -1,7 +1,7 @@
 // Package imports:
 // Project imports:
 import 'package:app_updater_data/src/models/base/base_model.dart';
-import 'package:flutter_ddd_skeleton_monorepo_domain/flutter_ddd_skeleton_monorepo_domain.dart';
+import 'package:app_updater_domain/app_updater_domain.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'counter_data_params.g.dart';

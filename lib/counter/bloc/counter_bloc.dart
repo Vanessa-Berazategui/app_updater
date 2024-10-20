@@ -1,6 +1,6 @@
 // Package imports:
 import 'package:bloc/bloc.dart';
-import 'package:flutter_ddd_skeleton_monorepo_domain/flutter_ddd_skeleton_monorepo_domain.dart';
+import 'package:app_updater_domain/app_updater_domain.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'counter_bloc.freezed.dart';

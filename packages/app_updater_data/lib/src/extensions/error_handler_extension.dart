@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 // Project imports:
 import 'package:app_updater_data/src/exceptions/exceptions.dart';
 import 'package:app_updater_data/src/types.dart';
-import 'package:flutter_ddd_skeleton_monorepo_domain/flutter_ddd_skeleton_monorepo_domain.dart';
+import 'package:app_updater_domain/app_updater_domain.dart';
 
 extension ErrorHandler on BaseRepository {
   Future<Result<T>> process<T>({

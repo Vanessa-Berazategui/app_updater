@@ -5,7 +5,7 @@ import 'package:app_updater_data/src/api/params/counter_data_params.dart';
 import 'package:app_updater_data/src/datasources/datasources.dart';
 import 'package:app_updater_data/src/extensions/extensions.dart';
 // Package imports:
-import 'package:flutter_ddd_skeleton_monorepo_domain/flutter_ddd_skeleton_monorepo_domain.dart';
+import 'package:app_updater_domain/app_updater_domain.dart';
 
 class CounterDataRepository implements CounterRepository {
   CounterDataRepository({

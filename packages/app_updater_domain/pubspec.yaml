@@ -1,5 +1,5 @@
-name: flutter_ddd_skeleton_monorepo_domain
-description: Flutter Ddd Skeleton Monorepo Flavoured Domain Layer.
+name: app_updater_domain
+description: App Updater Domain Layer.
 version: 0.1.0+1
 publish_to: none
 
