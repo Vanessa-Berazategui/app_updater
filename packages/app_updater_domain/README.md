@@ -1,4 +1,4 @@
-# Flutter App Updater Domain Layer
+# App Updater Domain Layer
 
 Esta capa está compuesta por las carpetas `entities`, `repositories`, `result` y `usecases`
 

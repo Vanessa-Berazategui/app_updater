@@ -1,4 +1,4 @@
-# Flutter Ddd Skeleton Monorepo Data Layer
+# App Updater Data Layer
 
 Esta capa está compuesta por las carpetas `models`, `extensions`, `exceptions`, `repositories`, `datasources` y `api`
 
