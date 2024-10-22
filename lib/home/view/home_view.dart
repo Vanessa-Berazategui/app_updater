@@ -34,7 +34,7 @@ class HomeView extends StatelessWidget {
                 InstallationProgressDialog.open(
                   context,
                   bloc: bloc,
-                  message: 'Descargando, por favor espere ... ',
+                  message: l10n.downloadindNewVersion,
                 ).then((value) => statusDialogOpened = false);
               }
             }

@@ -23,5 +23,9 @@
   "newAppInfo": "Existe una nueva versión de la aplicacion",
   "@newAppInfo": {
     "description": "Text shown in the information section"
+  },
+  "downloadindNewVersion": "Descargando, por favor espere ... ",
+  "@downloadindNewVersion": {
+    "description": "Text shown in the downloading process"
   }
 }
