@@ -90,11 +90,11 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.vberazateguisilva" "\0"
-            VALUE "FileDescription", "flutter_ddd_skeleton_monorepo" "\0"
+            VALUE "FileDescription", "app_updater" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "flutter_ddd_skeleton_monorepo" "\0"
+            VALUE "InternalName", "app_updater" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.vberazateguisilva. All rights reserved." "\0"
-            VALUE "OriginalFilename", "flutter_ddd_skeleton_monorepo.exe" "\0"
+            VALUE "OriginalFilename", "app_updater.exe" "\0"
             VALUE "ProductName", "Flutter Ddd Skeleton Monorepo Flavour 1" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END

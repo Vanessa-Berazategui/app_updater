@@ -1,15 +1,27 @@
 {
-    "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
-    },
-    "counterEmptyCache": "Valor de contador no guardado",
-    "@counterEmptyCache": {
-        "description": "Texto mostrado cuando no hay ningun valor de contador salvado"
-    },
-    "counterEmptyQuiz": "No hay información para tu número",
-    "@counterEmptyQuiz": {
-        "description": "Text shown if there is no info for value"
-    }
+  "@@locale": "es",
+  "informationAbout": "Acerca de AppUpdater",
+  "@informationAbout": {
+    "description": "Text shown as title in Home View"
+  },
+  "informationPackageVersion": "Versión APK",
+  "@informationPackageVersion": {
+    "description": "Text shown the version of the APK"
+  },
+  "informationBackendPackageVersion": "Última versión liberada APK",
+  "@informationBackendPackageVersion": {
+    "description": "Text shown the last production version of the APK"
+  },
+  "btnCheckUpdates": "Buscar actualizaciones",
+  "@btnCheckUpdates": {
+    "description": "Text shown in the button for checking updates"
+  },
+  "btnUpdateApp": "Actualizar",
+  "@btnUpdateApp": {
+    "description": "Text shown in the button to update app"
+  },
+  "newAppInfo": "Existe una nueva versión de la aplicacion",
+  "@newAppInfo": {
+    "description": "Text shown in the information section"
+  }
 }

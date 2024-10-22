@@ -5,23 +5,21 @@ import 'package:injectable/injectable.dart';
 @module
 abstract class AppUseCasesModule {
   //============================
-  // Counter
+  // Information
   //============================
   @lazySingleton
-  GetCounterUseCase getCounterUseCase(
-    CounterRepository repository,
+  GetPackageInfoUseCase getPackageInfoUseCase(
+    InformationRepository repository,
   ) =>
-      GetCounterUseCase(repository: repository);
+      GetPackageInfoUseCase(
+        repository: repository,
+      );
 
   @lazySingleton
-  SaveCounterUseCase saveCounterUseCase(
-    CounterRepository repository,
+  GetBackendInfoUseCase getBackendInfoUseCase(
+    InformationRepository repository,
   ) =>
-      SaveCounterUseCase(repository: repository);
-
-  @lazySingleton
-  QuizCounterUseCase quizCounterUseCase(
-    CounterRepository repository,
-  ) =>
-      QuizCounterUseCase(repository: repository);
+      GetBackendInfoUseCase(
+        repository: repository,
+      );
 }

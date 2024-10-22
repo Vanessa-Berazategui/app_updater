@@ -1,9 +1,8 @@
 // Package imports:
-import 'package:bloc_test/bloc_test.dart';
-import 'package:flutter_ddd_skeleton_monorepo/app/app.dart';
-import 'package:flutter_ddd_skeleton_monorepo/counter/counter.dart';
+import 'package:app_updater/app/app.dart';
+import 'package:app_updater/counter/counter.dart';
 import 'package:app_updater_data/app_updater_data.dart';
-import 'package:app_updater_domain/app_updater_domain.dart';
+import 'package:bloc_test/bloc_test.dart';
 // Project imports:
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';

@@ -1,19 +1,19 @@
 // Package imports:
-import 'package:flutter_ddd_skeleton_monorepo/app/environment/app_environment.dart';
+import 'package:app_updater/app/environment/app_environment.dart';
 import 'package:app_updater_data/app_updater_data.dart';
 import 'package:injectable/injectable.dart';
 
 @module
 abstract class AppApiModule {
   //============================
-  // Flutter DDD Skeleton Monorepo Api
+  // App Updater Api
   //============================
   @lazySingleton
-  FlutterDddSkeletonMonorepoApi flutterDddSkeletonMonorepoFlavouredApi(
+  AppUpdaterApi appUpdaterApi(
     AppEnvironment appEnvironment,
     HttpAuthorizationInterceptor httpAuthorizationInterceptor,
   ) =>
-      FlutterDddSkeletonMonorepoApi(
+      AppUpdaterApi(
         baseUrl: appEnvironment.baseUrl,
         httpAuthorizationInterceptor: httpAuthorizationInterceptor,
         timeoutOptions: TimeoutOptions(

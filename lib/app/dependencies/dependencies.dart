@@ -1,6 +1,6 @@
 // Package imports:
 // Project imports:
-import 'package:flutter_ddd_skeleton_monorepo/app/dependencies/dependencies.config.dart';
+import 'package:app_updater/app/dependencies/dependencies.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 

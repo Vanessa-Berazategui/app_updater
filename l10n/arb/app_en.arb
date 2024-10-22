@@ -1,15 +1,27 @@
 {
-    "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    },
-    "counterEmptyCache": "Unsaved counter value",
-    "@counterEmptyCache": {
-        "description": "Text shown if there is no cache value"
-    },
-    "counterEmptyQuiz": "There's no info for your number",
-    "@counterEmptyQuiz": {
-        "description": "Text shown if there is no info for value"
-    }
+  "@@locale": "en",
+  "informationAbout": "About AppUpdater",
+  "@informationAbout": {
+    "description": "Text shown as title in Home View"
+  },
+  "informationPackageVersion": "APK version",
+  "@informationPackageVersion": {
+    "description": "Text shown the version of the APK"
+  },
+  "informationBackendPackageVersion": "Latest released APK",
+  "@informationBackendPackageVersion": {
+    "description": "Text shown the last production version of the APK"
+  },
+  "btnCheckUpdates": "Search updates",
+  "@btnCheckUpdates": {
+    "description": "Text shown in the button for checking updates"
+  },
+  "btnUpdateApp": "Update",
+  "@btnUpdateApp": {
+    "description": "Text shown in the button to update app"
+  },
+  "newAppInfo": "There is a new version of the application",
+  "@newAppInfo": {
+    "description": "Text shown in the information section"
+  }
 }

@@ -1,10 +1,10 @@
 // Flutter imports:
 
+// Flutter imports:
+import 'package:app_updater/app/app.dart';
+import 'package:app_updater/counter/counter.dart';
 // Package imports:
 import 'package:bloc_test/bloc_test.dart';
-// Flutter imports:
-import 'package:flutter_ddd_skeleton_monorepo/app/app.dart';
-import 'package:flutter_ddd_skeleton_monorepo/counter/counter.dart';
 // Project imports:
 
 import 'package:flutter_test/flutter_test.dart';

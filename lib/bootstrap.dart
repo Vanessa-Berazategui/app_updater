@@ -2,12 +2,12 @@
 import 'dart:async';
 import 'dart:developer';
 
+// Project imports:
+import 'package:app_updater/app/dependencies/dependencies.dart';
 // Package imports:
 import 'package:bloc/bloc.dart';
 // Flutter imports:
 import 'package:flutter/widgets.dart';
-// Project imports:
-import 'package:flutter_ddd_skeleton_monorepo/app/dependencies/dependencies.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();

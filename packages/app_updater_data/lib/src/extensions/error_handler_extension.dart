@@ -1,12 +1,12 @@
 // Dart imports:
 import 'dart:developer';
 
-// Package imports:
-import 'package:dio/dio.dart';
 // Project imports:
 import 'package:app_updater_data/src/exceptions/exceptions.dart';
 import 'package:app_updater_data/src/types.dart';
 import 'package:app_updater_domain/app_updater_domain.dart';
+// Package imports:
+import 'package:dio/dio.dart';
 
 extension ErrorHandler on BaseRepository {
   Future<Result<T>> process<T>({

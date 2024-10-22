@@ -1,7 +1,7 @@
 // Package imports:
 
 // Project imports:
-import 'package:flutter_ddd_skeleton_monorepo/app/app.dart';
+import 'package:app_updater/app/app.dart';
 // Package imports:
 
 class AppEnvironmentTesting implements AppEnvironment {

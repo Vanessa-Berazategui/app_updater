@@ -6,15 +6,11 @@ import 'package:injectable/injectable.dart';
 @module
 abstract class AppRepositoriesModule {
   //============================
-  // Counter
+  // Information
   //============================
   @lazySingleton
-  CounterRepository aboutRepository(
-    CounterLocalDataSource localDataSource,
-    CounterRemoteDataSource remoteDataSource,
+  InformationRepository informationRepository(
+    InformationDataSource dataSource,
   ) =>
-      CounterDataRepository(
-        localDataSource: localDataSource,
-        remoteDataSource: remoteDataSource,
-      );
+      InformationDataRepository(dataSource: dataSource);
 }

@@ -1,4 +1,4 @@
-name: flutter_ddd_skeleton_monorepo
+name: app_updater
 
 packages:
   - packages/**

@@ -1,5 +1,5 @@
 // Package imports:
-import 'package:flutter_ddd_skeleton_monorepo/app/app.dart';
+import 'package:app_updater/app/app.dart';
 
 class MaterialTheme {
   static MaterialScheme lightScheme() {

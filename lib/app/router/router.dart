@@ -1,7 +1,7 @@
 // Flutter imports:
+import 'package:app_updater/app/app.dart';
+import 'package:app_updater/home/home.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_ddd_skeleton_monorepo/app/app.dart';
-import 'package:flutter_ddd_skeleton_monorepo/counter/counter.dart';
 import 'package:go_router/go_router.dart';
 // Project imports:
 
@@ -9,9 +9,9 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
 final appRouter = GoRouter(
   navigatorKey: _rootNavigatorKey,
-  initialLocation: CounterPage.route,
+  initialLocation: HomePage.route,
   routes: [
-    CounterPage(),
+    HomePage(),
   ],
   debugLogDiagnostics: kDebugMode,
 );

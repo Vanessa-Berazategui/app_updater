@@ -9,13 +9,13 @@ import '../helpers/helpers.dart';
 
 void main() {
   /// Api
-  late FlutterDddSkeletonMonorepoApi api;
+  late AppUpdaterApi api;
   late AppEnvironmentApi env;
 
   setUpAll(() {
     env = const AppEnvironmentApi();
 
-    api = FlutterDddSkeletonMonorepoApi(
+    api = AppUpdaterApi(
       baseUrl: env.baseUrl,
       httpAuthorizationInterceptor: HttpAuthorizationInterceptor(
         apiKey: env.apiKey,
@@ -29,17 +29,17 @@ void main() {
     );
   });
 
-  group('numbersapi', () {
-    test('quizCounter', () async {
-      final result = await api.quizCounter(
-        number: 16,
-        fragment: true,
-        json: true,
+  group('githubapi', () {
+    test('getBackendInfo', () async {
+      final result = await api.getBackendInfo();
+
+      log('${result.apkVersion}${result.apkUrl}');
+
+      expect(
+        '${result.apkVersion}${result.apkUrl}',
+        isNotEmpty,
+        reason: 'Backend info result is empty',
       );
-
-      log(result.text);
-
-      expect(result.text, isNotEmpty, reason: 'Quiz result is empty');
     });
   });
 }

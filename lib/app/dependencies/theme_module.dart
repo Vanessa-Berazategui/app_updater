@@ -1,6 +1,6 @@
 // Package imports:
 // Project imports:
-import 'package:flutter_ddd_skeleton_monorepo/app/theme/material_theme.dart';
+import 'package:app_updater/app/theme/material_theme.dart';
 import 'package:injectable/injectable.dart';
 
 @module

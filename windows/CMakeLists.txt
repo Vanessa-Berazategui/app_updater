@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(flutter_ddd_skeleton_monorepo LANGUAGES CXX)
+project(app_updater LANGUAGES CXX)
 
 set(BINARY_NAME "com.vberazateguisilva.app_updater")
 
