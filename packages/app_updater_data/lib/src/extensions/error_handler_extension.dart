@@ -4,8 +4,8 @@ import 'dart:developer';
 // Project imports:
 import 'package:app_updater_data/src/exceptions/exceptions.dart';
 import 'package:app_updater_data/src/types.dart';
-import 'package:app_updater_domain/app_updater_domain.dart';
 // Package imports:
+import 'package:app_updater_domain/app_updater_domain.dart';
 import 'package:dio/dio.dart';
 
 extension ErrorHandler on BaseRepository {
@@ -21,8 +21,6 @@ extension ErrorHandler on BaseRepository {
       rethrow;
     } on CacheException {
       return Result.failure(const Failure.cache());
-    } on QuizException {
-      return Result.failure(const Failure.quiz());
     } on DioException catch (e) {
       log(e.runtimeType.toString(), name: runtimeType.toString());
       log(e.toString(), name: runtimeType.toString());

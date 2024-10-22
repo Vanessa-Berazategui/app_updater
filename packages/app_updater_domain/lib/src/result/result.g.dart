@@ -94,12 +94,14 @@ Map<String, dynamic> _$$FailureCacheImplToJson(_$FailureCacheImpl instance) =>
       'runtimeType': instance.$type,
     };
 
-_$FailureQuizImpl _$$FailureQuizImplFromJson(Map<String, dynamic> json) =>
-    _$FailureQuizImpl(
+_$FailureOTAImpl _$$FailureOTAImplFromJson(Map<String, dynamic> json) =>
+    _$FailureOTAImpl(
+      message: json['message'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$FailureQuizImplToJson(_$FailureQuizImpl instance) =>
+Map<String, dynamic> _$$FailureOTAImplToJson(_$FailureOTAImpl instance) =>
     <String, dynamic>{
+      'message': instance.message,
       'runtimeType': instance.$type,
     };

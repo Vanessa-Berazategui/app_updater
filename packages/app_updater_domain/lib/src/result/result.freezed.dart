@@ -387,8 +387,8 @@ Failure _$FailureFromJson(Map<String, dynamic> json) {
       return _FailureReceiveTimeout.fromJson(json);
     case 'cache':
       return _FailureCache.fromJson(json);
-    case 'quiz':
-      return _FailureQuiz.fromJson(json);
+    case 'ota':
+      return _FailureOTA.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'Failure',
@@ -407,7 +407,7 @@ mixin _$Failure {
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
     required TResult Function() cache,
-    required TResult Function() quiz,
+    required TResult Function(String message) ota,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -419,7 +419,7 @@ mixin _$Failure {
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
     TResult? Function()? cache,
-    TResult? Function()? quiz,
+    TResult? Function(String message)? ota,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -431,7 +431,7 @@ mixin _$Failure {
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
     TResult Function()? cache,
-    TResult Function()? quiz,
+    TResult Function(String message)? ota,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -444,7 +444,7 @@ mixin _$Failure {
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
     required TResult Function(_FailureCache value) cache,
-    required TResult Function(_FailureQuiz value) quiz,
+    required TResult Function(_FailureOTA value) ota,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -456,7 +456,7 @@ mixin _$Failure {
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult? Function(_FailureCache value)? cache,
-    TResult? Function(_FailureQuiz value)? quiz,
+    TResult? Function(_FailureOTA value)? ota,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -468,7 +468,7 @@ mixin _$Failure {
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult Function(_FailureCache value)? cache,
-    TResult Function(_FailureQuiz value)? quiz,
+    TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -589,7 +589,7 @@ class _$FailureServerImpl implements _FailureServer {
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
     required TResult Function() cache,
-    required TResult Function() quiz,
+    required TResult Function(String message) ota,
   }) {
     return server(message, code);
   }
@@ -604,7 +604,7 @@ class _$FailureServerImpl implements _FailureServer {
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
     TResult? Function()? cache,
-    TResult? Function()? quiz,
+    TResult? Function(String message)? ota,
   }) {
     return server?.call(message, code);
   }
@@ -619,7 +619,7 @@ class _$FailureServerImpl implements _FailureServer {
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
     TResult Function()? cache,
-    TResult Function()? quiz,
+    TResult Function(String message)? ota,
     required TResult orElse(),
   }) {
     if (server != null) {
@@ -638,7 +638,7 @@ class _$FailureServerImpl implements _FailureServer {
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
     required TResult Function(_FailureCache value) cache,
-    required TResult Function(_FailureQuiz value) quiz,
+    required TResult Function(_FailureOTA value) ota,
   }) {
     return server(this);
   }
@@ -653,7 +653,7 @@ class _$FailureServerImpl implements _FailureServer {
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult? Function(_FailureCache value)? cache,
-    TResult? Function(_FailureQuiz value)? quiz,
+    TResult? Function(_FailureOTA value)? ota,
   }) {
     return server?.call(this);
   }
@@ -668,7 +668,7 @@ class _$FailureServerImpl implements _FailureServer {
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult Function(_FailureCache value)? cache,
-    TResult Function(_FailureQuiz value)? quiz,
+    TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
   }) {
     if (server != null) {
@@ -786,7 +786,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
     required TResult Function() cache,
-    required TResult Function() quiz,
+    required TResult Function(String message) ota,
   }) {
     return unauthorized(message);
   }
@@ -801,7 +801,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
     TResult? Function()? cache,
-    TResult? Function()? quiz,
+    TResult? Function(String message)? ota,
   }) {
     return unauthorized?.call(message);
   }
@@ -816,7 +816,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
     TResult Function()? cache,
-    TResult Function()? quiz,
+    TResult Function(String message)? ota,
     required TResult orElse(),
   }) {
     if (unauthorized != null) {
@@ -835,7 +835,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
     required TResult Function(_FailureCache value) cache,
-    required TResult Function(_FailureQuiz value) quiz,
+    required TResult Function(_FailureOTA value) ota,
   }) {
     return unauthorized(this);
   }
@@ -850,7 +850,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult? Function(_FailureCache value)? cache,
-    TResult? Function(_FailureQuiz value)? quiz,
+    TResult? Function(_FailureOTA value)? ota,
   }) {
     return unauthorized?.call(this);
   }
@@ -865,7 +865,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult Function(_FailureCache value)? cache,
-    TResult Function(_FailureQuiz value)? quiz,
+    TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
   }) {
     if (unauthorized != null) {
@@ -980,7 +980,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
     required TResult Function() cache,
-    required TResult Function() quiz,
+    required TResult Function(String message) ota,
   }) {
     return unexpected(e);
   }
@@ -995,7 +995,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
     TResult? Function()? cache,
-    TResult? Function()? quiz,
+    TResult? Function(String message)? ota,
   }) {
     return unexpected?.call(e);
   }
@@ -1010,7 +1010,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
     TResult Function()? cache,
-    TResult Function()? quiz,
+    TResult Function(String message)? ota,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -1029,7 +1029,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
     required TResult Function(_FailureCache value) cache,
-    required TResult Function(_FailureQuiz value) quiz,
+    required TResult Function(_FailureOTA value) ota,
   }) {
     return unexpected(this);
   }
@@ -1044,7 +1044,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult? Function(_FailureCache value)? cache,
-    TResult? Function(_FailureQuiz value)? quiz,
+    TResult? Function(_FailureOTA value)? ota,
   }) {
     return unexpected?.call(this);
   }
@@ -1059,7 +1059,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult Function(_FailureCache value)? cache,
-    TResult Function(_FailureQuiz value)? quiz,
+    TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -1149,7 +1149,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
     required TResult Function() cache,
-    required TResult Function() quiz,
+    required TResult Function(String message) ota,
   }) {
     return connectTimeout();
   }
@@ -1164,7 +1164,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
     TResult? Function()? cache,
-    TResult? Function()? quiz,
+    TResult? Function(String message)? ota,
   }) {
     return connectTimeout?.call();
   }
@@ -1179,7 +1179,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
     TResult Function()? cache,
-    TResult Function()? quiz,
+    TResult Function(String message)? ota,
     required TResult orElse(),
   }) {
     if (connectTimeout != null) {
@@ -1198,7 +1198,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
     required TResult Function(_FailureCache value) cache,
-    required TResult Function(_FailureQuiz value) quiz,
+    required TResult Function(_FailureOTA value) ota,
   }) {
     return connectTimeout(this);
   }
@@ -1213,7 +1213,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult? Function(_FailureCache value)? cache,
-    TResult? Function(_FailureQuiz value)? quiz,
+    TResult? Function(_FailureOTA value)? ota,
   }) {
     return connectTimeout?.call(this);
   }
@@ -1228,7 +1228,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult Function(_FailureCache value)? cache,
-    TResult Function(_FailureQuiz value)? quiz,
+    TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
   }) {
     if (connectTimeout != null) {
@@ -1308,7 +1308,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
     required TResult Function() cache,
-    required TResult Function() quiz,
+    required TResult Function(String message) ota,
   }) {
     return sendTimeout();
   }
@@ -1323,7 +1323,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
     TResult? Function()? cache,
-    TResult? Function()? quiz,
+    TResult? Function(String message)? ota,
   }) {
     return sendTimeout?.call();
   }
@@ -1338,7 +1338,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
     TResult Function()? cache,
-    TResult Function()? quiz,
+    TResult Function(String message)? ota,
     required TResult orElse(),
   }) {
     if (sendTimeout != null) {
@@ -1357,7 +1357,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
     required TResult Function(_FailureCache value) cache,
-    required TResult Function(_FailureQuiz value) quiz,
+    required TResult Function(_FailureOTA value) ota,
   }) {
     return sendTimeout(this);
   }
@@ -1372,7 +1372,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult? Function(_FailureCache value)? cache,
-    TResult? Function(_FailureQuiz value)? quiz,
+    TResult? Function(_FailureOTA value)? ota,
   }) {
     return sendTimeout?.call(this);
   }
@@ -1387,7 +1387,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult Function(_FailureCache value)? cache,
-    TResult Function(_FailureQuiz value)? quiz,
+    TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
   }) {
     if (sendTimeout != null) {
@@ -1469,7 +1469,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
     required TResult Function() cache,
-    required TResult Function() quiz,
+    required TResult Function(String message) ota,
   }) {
     return receiveTimeout();
   }
@@ -1484,7 +1484,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
     TResult? Function()? cache,
-    TResult? Function()? quiz,
+    TResult? Function(String message)? ota,
   }) {
     return receiveTimeout?.call();
   }
@@ -1499,7 +1499,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
     TResult Function()? cache,
-    TResult Function()? quiz,
+    TResult Function(String message)? ota,
     required TResult orElse(),
   }) {
     if (receiveTimeout != null) {
@@ -1518,7 +1518,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
     required TResult Function(_FailureCache value) cache,
-    required TResult Function(_FailureQuiz value) quiz,
+    required TResult Function(_FailureOTA value) ota,
   }) {
     return receiveTimeout(this);
   }
@@ -1533,7 +1533,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult? Function(_FailureCache value)? cache,
-    TResult? Function(_FailureQuiz value)? quiz,
+    TResult? Function(_FailureOTA value)? ota,
   }) {
     return receiveTimeout?.call(this);
   }
@@ -1548,7 +1548,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult Function(_FailureCache value)? cache,
-    TResult Function(_FailureQuiz value)? quiz,
+    TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
   }) {
     if (receiveTimeout != null) {
@@ -1627,7 +1627,7 @@ class _$FailureCacheImpl implements _FailureCache {
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
     required TResult Function() cache,
-    required TResult Function() quiz,
+    required TResult Function(String message) ota,
   }) {
     return cache();
   }
@@ -1642,7 +1642,7 @@ class _$FailureCacheImpl implements _FailureCache {
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
     TResult? Function()? cache,
-    TResult? Function()? quiz,
+    TResult? Function(String message)? ota,
   }) {
     return cache?.call();
   }
@@ -1657,7 +1657,7 @@ class _$FailureCacheImpl implements _FailureCache {
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
     TResult Function()? cache,
-    TResult Function()? quiz,
+    TResult Function(String message)? ota,
     required TResult orElse(),
   }) {
     if (cache != null) {
@@ -1676,7 +1676,7 @@ class _$FailureCacheImpl implements _FailureCache {
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
     required TResult Function(_FailureCache value) cache,
-    required TResult Function(_FailureQuiz value) quiz,
+    required TResult Function(_FailureOTA value) ota,
   }) {
     return cache(this);
   }
@@ -1691,7 +1691,7 @@ class _$FailureCacheImpl implements _FailureCache {
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult? Function(_FailureCache value)? cache,
-    TResult? Function(_FailureQuiz value)? quiz,
+    TResult? Function(_FailureOTA value)? ota,
   }) {
     return cache?.call(this);
   }
@@ -1706,7 +1706,7 @@ class _$FailureCacheImpl implements _FailureCache {
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult Function(_FailureCache value)? cache,
-    TResult Function(_FailureQuiz value)? quiz,
+    TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
   }) {
     if (cache != null) {
@@ -1731,49 +1731,77 @@ abstract class _FailureCache implements Failure {
 }
 
 /// @nodoc
-abstract class _$$FailureQuizImplCopyWith<$Res> {
-  factory _$$FailureQuizImplCopyWith(
-          _$FailureQuizImpl value, $Res Function(_$FailureQuizImpl) then) =
-      __$$FailureQuizImplCopyWithImpl<$Res>;
+abstract class _$$FailureOTAImplCopyWith<$Res> {
+  factory _$$FailureOTAImplCopyWith(
+          _$FailureOTAImpl value, $Res Function(_$FailureOTAImpl) then) =
+      __$$FailureOTAImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
 }
 
 /// @nodoc
-class __$$FailureQuizImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$FailureQuizImpl>
-    implements _$$FailureQuizImplCopyWith<$Res> {
-  __$$FailureQuizImplCopyWithImpl(
-      _$FailureQuizImpl _value, $Res Function(_$FailureQuizImpl) _then)
+class __$$FailureOTAImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$FailureOTAImpl>
+    implements _$$FailureOTAImplCopyWith<$Res> {
+  __$$FailureOTAImplCopyWithImpl(
+      _$FailureOTAImpl _value, $Res Function(_$FailureOTAImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$FailureOTAImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$FailureQuizImpl implements _FailureQuiz {
-  const _$FailureQuizImpl({final String? $type}) : $type = $type ?? 'quiz';
+class _$FailureOTAImpl implements _FailureOTA {
+  const _$FailureOTAImpl({required this.message, final String? $type})
+      : $type = $type ?? 'ota';
 
-  factory _$FailureQuizImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FailureQuizImplFromJson(json);
+  factory _$FailureOTAImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FailureOTAImplFromJson(json);
+
+  @override
+  final String message;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
   @override
   String toString() {
-    return 'Failure.quiz()';
+    return 'Failure.ota(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FailureQuizImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$FailureOTAImpl &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, message);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailureOTAImplCopyWith<_$FailureOTAImpl> get copyWith =>
+      __$$FailureOTAImplCopyWithImpl<_$FailureOTAImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1785,9 +1813,9 @@ class _$FailureQuizImpl implements _FailureQuiz {
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
     required TResult Function() cache,
-    required TResult Function() quiz,
+    required TResult Function(String message) ota,
   }) {
-    return quiz();
+    return ota(message);
   }
 
   @override
@@ -1800,9 +1828,9 @@ class _$FailureQuizImpl implements _FailureQuiz {
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
     TResult? Function()? cache,
-    TResult? Function()? quiz,
+    TResult? Function(String message)? ota,
   }) {
-    return quiz?.call();
+    return ota?.call(message);
   }
 
   @override
@@ -1815,11 +1843,11 @@ class _$FailureQuizImpl implements _FailureQuiz {
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
     TResult Function()? cache,
-    TResult Function()? quiz,
+    TResult Function(String message)? ota,
     required TResult orElse(),
   }) {
-    if (quiz != null) {
-      return quiz();
+    if (ota != null) {
+      return ota(message);
     }
     return orElse();
   }
@@ -1834,9 +1862,9 @@ class _$FailureQuizImpl implements _FailureQuiz {
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
     required TResult Function(_FailureCache value) cache,
-    required TResult Function(_FailureQuiz value) quiz,
+    required TResult Function(_FailureOTA value) ota,
   }) {
-    return quiz(this);
+    return ota(this);
   }
 
   @override
@@ -1849,9 +1877,9 @@ class _$FailureQuizImpl implements _FailureQuiz {
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult? Function(_FailureCache value)? cache,
-    TResult? Function(_FailureQuiz value)? quiz,
+    TResult? Function(_FailureOTA value)? ota,
   }) {
-    return quiz?.call(this);
+    return ota?.call(this);
   }
 
   @override
@@ -1864,26 +1892,34 @@ class _$FailureQuizImpl implements _FailureQuiz {
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
     TResult Function(_FailureCache value)? cache,
-    TResult Function(_FailureQuiz value)? quiz,
+    TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
   }) {
-    if (quiz != null) {
-      return quiz(this);
+    if (ota != null) {
+      return ota(this);
     }
     return orElse();
   }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$FailureQuizImplToJson(
+    return _$$FailureOTAImplToJson(
       this,
     );
   }
 }
 
-abstract class _FailureQuiz implements Failure {
-  const factory _FailureQuiz() = _$FailureQuizImpl;
+abstract class _FailureOTA implements Failure {
+  const factory _FailureOTA({required final String message}) = _$FailureOTAImpl;
 
-  factory _FailureQuiz.fromJson(Map<String, dynamic> json) =
-      _$FailureQuizImpl.fromJson;
+  factory _FailureOTA.fromJson(Map<String, dynamic> json) =
+      _$FailureOTAImpl.fromJson;
+
+  String get message;
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FailureOTAImplCopyWith<_$FailureOTAImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

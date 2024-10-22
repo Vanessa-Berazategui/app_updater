@@ -103,9 +103,8 @@ class HomeBloc extends Cubit<HomeState> {
               state.copyWith(
                 installingUpdate: false,
                 installationIsDone: false,
-                failure: Failure.server(
-                  message:
-                      'Failed to make OTA update. Details: ${event.status}',
+                failure: Failure.ota(
+                  message: event.status.toString(),
                 ),
                 installationProgress: 0,
               ),
@@ -119,7 +118,7 @@ class HomeBloc extends Cubit<HomeState> {
           installingUpdate: false,
           installationIsDone: false,
           failure: Failure.server(
-            message: 'Failed to make OTA update. Details: $e',
+            message: e.toString(),
           ),
           installationProgress: 0,
         ),
