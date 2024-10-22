@@ -1,3 +1,4 @@
+// Project imports:
 import 'package:app_updater_domain/app_updater_domain.dart';
 
 class GetPackageInfoUseCase implements BaseUseCase<PackageInfo, NoParams> {

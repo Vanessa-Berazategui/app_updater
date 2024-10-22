@@ -1,6 +1,6 @@
-// Package imports:
 // Project imports:
 import 'package:app_updater_domain/app_updater_domain.dart';
+// Package imports:
 import 'package:meta/meta.dart';
 
 @immutable

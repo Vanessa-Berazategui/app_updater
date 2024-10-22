@@ -1,8 +1,9 @@
-// Package imports:
+// Dart imports:
 import 'dart:developer';
 
-import 'package:app_updater_data/app_updater_data.dart';
 // Project imports:
+import 'package:app_updater_data/app_updater_data.dart';
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
 
 import '../helpers/helpers.dart';
