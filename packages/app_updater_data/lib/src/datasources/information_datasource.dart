@@ -11,7 +11,7 @@ class InformationDataSource extends BaseDataSource {
 
     return PackageInfoModel(
       name: packageInfo.appName,
-      version: '${packageInfo.version} ${packageInfo.buildNumber}',
+      version: '${packageInfo.version}+${packageInfo.buildNumber}',
     );
   }
 

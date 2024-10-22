@@ -25,8 +25,14 @@ class HomeState with _$HomeState {
 extension HomeStateX on HomeState {
   bool get loading => loadingPackageInfo || loadingBackendInfo;
 
-  bool get updateApp =>
-      packageInfo != null &&
-      backendInfo != null &&
-      packageInfo?.version != backendInfo?.apkVersion;
+  bool get updateApp {
+    if (packageInfo != null && backendInfo != null) {
+      final currentVersion = Version.parse(packageInfo!.version);
+      final latestVersion = Version.parse(backendInfo!.apkVersion);
+
+      return latestVersion > currentVersion;
+    }
+
+    return false;
+  }
 }
