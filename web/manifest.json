@@ -1,6 +1,6 @@
 {
-     "name": "com.vberazateguisilva.app_updater",
-     "short_name": "com.vberazateguisilva.app_updater",
+     "name": "app_updater",
+     "short_name": "app_updater",
      "start_url": ".",
      "display": "standalone",
      "background_color": "#0175C2",
