@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:app_updater_domain/app_updater_domain.dart';
 import 'package:bloc/bloc.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:ota_update/ota_update.dart';
 import 'package:version/version.dart';
@@ -14,11 +17,17 @@ class HomeBloc extends Cubit<HomeState> {
   })  : _getPackageInfoUseCase = getPackageInfoUseCase,
         _getBackendInfoUseCase = getBackendInfoUseCase,
         super(HomeState.init()) {
+    _downloader = OtaUpdate();
+    _subscription = Connectivity().onConnectivityChanged.listen(
+          _connectivityListener,
+        );
     loadData();
   }
 
   final GetPackageInfoUseCase _getPackageInfoUseCase;
   final GetBackendInfoUseCase _getBackendInfoUseCase;
+  late OtaUpdate _downloader;
+  late StreamSubscription<List<ConnectivityResult>>? _subscription;
 
   void loadData() {
     Future.wait(
@@ -27,6 +36,29 @@ class HomeBloc extends Cubit<HomeState> {
         _loadBackendInfo(),
       ],
     );
+  }
+
+  Future<void> _connectivityListener(
+    List<ConnectivityResult> connectivity,
+  ) async {
+    emit(state.copyWith(connectivity: connectivity));
+
+    if (!state.hasConnection()) {
+      /// Cancel stream
+      await _downloader.cancel();
+
+      /// Prepare new stream
+      _downloader = OtaUpdate();
+
+      emit(
+        state.copyWith(
+          downloadingUpdate: false,
+          downloadingIsDone: false,
+          downloadingProgress: 0,
+          failure: const Failure.noConnection(),
+        ),
+      );
+    }
   }
 
   Future<void> _loadPackageInfo() async {
@@ -66,24 +98,40 @@ class HomeBloc extends Cubit<HomeState> {
       ),
       failure: (failure) => emit(
         state.copyWith(
-          loadingPackageInfo: false,
+          loadingBackendInfo: false,
           failure: failure,
         ),
       ),
     );
   }
 
-  Future<void> updateApp() async {
-    emit(state.copyWith(installingUpdate: true));
+  Future<void> downloadUpdate() async {
+    emit(state.copyWith(downloadingUpdate: true));
 
     try {
-      OtaUpdate()
+      _downloader
           .execute(
         state.backendInfo!.apkUrl,
-        destinationFilename: 'sfvm.apk',
+        destinationFilename: 'app_downloader.apk',
       )
           .listen(
         (OtaEvent event) {
+          print(event.status.name);
+
+          if (!(event.status == OtaStatus.DOWNLOADING ||
+              event.status == OtaStatus.INSTALLING)) {
+            return emit(
+              state.copyWith(
+                downloadingUpdate: false,
+                downloadingIsDone: false,
+                failure: Failure.ota(
+                  message: event.status.toString(),
+                ),
+                downloadingProgress: 0,
+              ),
+            );
+          }
+
           if (event.status == OtaStatus.DOWNLOADING) {
             final dowloading =
                 event.value != null && double.tryParse(event.value!) != null;
@@ -93,20 +141,20 @@ class HomeBloc extends Cubit<HomeState> {
 
               return emit(
                 state.copyWith(
-                  installationProgress: progress,
-                  installationIsDone: progress == 100,
+                  downloadingProgress: progress,
+                  downloadingIsDone: progress == 100,
                 ),
               );
             }
 
             return emit(
               state.copyWith(
-                installingUpdate: false,
-                installationIsDone: false,
+                downloadingUpdate: false,
+                downloadingIsDone: false,
                 failure: Failure.ota(
                   message: event.status.toString(),
                 ),
-                installationProgress: 0,
+                downloadingProgress: 0,
               ),
             );
           }
@@ -115,16 +163,26 @@ class HomeBloc extends Cubit<HomeState> {
     } catch (e) {
       emit(
         state.copyWith(
-          installingUpdate: false,
-          installationIsDone: false,
-          failure: Failure.server(
+          downloadingUpdate: false,
+          downloadingIsDone: false,
+          failure: Failure.ota(
             message: e.toString(),
           ),
-          installationProgress: 0,
+          downloadingProgress: 0,
         ),
       );
     }
   }
 
+  Future<void> downloadingDialogOpened({required bool value}) async {
+    emit(state.copyWith(downloadingDialogOpened: value));
+  }
+
   void cleanFailure() => emit(state.copyWith(failure: null));
+
+  @override
+  Future<void> close() {
+    _subscription!.cancel();
+    return super.close();
+  }
 }

@@ -12,7 +12,6 @@ class HomeView extends StatelessWidget {
     final colors = context.colors;
     final l10n = context.l10n;
     final texts = context.texts;
-    var statusDialogOpened = false;
 
     final bloc = context.read<HomeBloc>();
 
@@ -21,30 +20,28 @@ class HomeView extends StatelessWidget {
         backgroundColor: colors.onPrimary,
         body: BlocListener<HomeBloc, HomeState>(
           listenWhen: (previous, current) =>
-              current.failure != null || current.installingUpdate,
+              current.failure != null || current.downloadingUpdate,
           listener: (context, state) {
             if (state.failure != null) {
               context.showErrorMessage(state.failure!.errorMessage);
               return bloc.cleanFailure();
             }
 
-            if (state.installingUpdate) {
-              if (!statusDialogOpened) {
-                statusDialogOpened = true;
-                InstallationProgressDialog.open(
-                  context,
-                  bloc: bloc,
-                  message: l10n.downloadindNewVersion,
-                ).then((value) => statusDialogOpened = false);
-              }
+            if (state.downloadingUpdate && !state.downloadingDialogOpened) {
+              bloc.downloadingDialogOpened(value: true);
+
+              DownloadingProgressDialog.open(
+                context,
+                bloc: bloc,
+                message: l10n.downloadindNewVersion,
+              ).then((_) => bloc.downloadingDialogOpened(value: false));
             }
           },
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: BlocBuilder<HomeBloc, HomeState>(
               buildWhen: (previous, current) =>
-                  previous.loadingPackageInfo != current.loadingPackageInfo ||
-                  previous.loadingBackendInfo != current.loadingBackendInfo,
+                  previous.loading != current.loading,
               builder: (context, state) {
                 return Stack(
                   children: [

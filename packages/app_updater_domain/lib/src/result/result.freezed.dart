@@ -385,6 +385,8 @@ Failure _$FailureFromJson(Map<String, dynamic> json) {
       return _FailureSendTimeOut.fromJson(json);
     case 'receiveTimeout':
       return _FailureReceiveTimeout.fromJson(json);
+    case 'noConnection':
+      return _FailureNoConnection.fromJson(json);
     case 'cache':
       return _FailureCache.fromJson(json);
     case 'ota':
@@ -406,6 +408,7 @@ mixin _$Failure {
     required TResult Function() connectTimeout,
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
+    required TResult Function() noConnection,
     required TResult Function() cache,
     required TResult Function(String message) ota,
   }) =>
@@ -418,6 +421,7 @@ mixin _$Failure {
     TResult? Function()? connectTimeout,
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
+    TResult? Function()? noConnection,
     TResult? Function()? cache,
     TResult? Function(String message)? ota,
   }) =>
@@ -430,6 +434,7 @@ mixin _$Failure {
     TResult Function()? connectTimeout,
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
+    TResult Function()? noConnection,
     TResult Function()? cache,
     TResult Function(String message)? ota,
     required TResult orElse(),
@@ -443,6 +448,7 @@ mixin _$Failure {
     required TResult Function(_FailureConnectTimeOut value) connectTimeout,
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
+    required TResult Function(_FailureNoConnection value) noConnection,
     required TResult Function(_FailureCache value) cache,
     required TResult Function(_FailureOTA value) ota,
   }) =>
@@ -455,6 +461,7 @@ mixin _$Failure {
     TResult? Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult? Function(_FailureNoConnection value)? noConnection,
     TResult? Function(_FailureCache value)? cache,
     TResult? Function(_FailureOTA value)? ota,
   }) =>
@@ -467,6 +474,7 @@ mixin _$Failure {
     TResult Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult Function(_FailureNoConnection value)? noConnection,
     TResult Function(_FailureCache value)? cache,
     TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
@@ -588,6 +596,7 @@ class _$FailureServerImpl implements _FailureServer {
     required TResult Function() connectTimeout,
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
+    required TResult Function() noConnection,
     required TResult Function() cache,
     required TResult Function(String message) ota,
   }) {
@@ -603,6 +612,7 @@ class _$FailureServerImpl implements _FailureServer {
     TResult? Function()? connectTimeout,
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
+    TResult? Function()? noConnection,
     TResult? Function()? cache,
     TResult? Function(String message)? ota,
   }) {
@@ -618,6 +628,7 @@ class _$FailureServerImpl implements _FailureServer {
     TResult Function()? connectTimeout,
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
+    TResult Function()? noConnection,
     TResult Function()? cache,
     TResult Function(String message)? ota,
     required TResult orElse(),
@@ -637,6 +648,7 @@ class _$FailureServerImpl implements _FailureServer {
     required TResult Function(_FailureConnectTimeOut value) connectTimeout,
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
+    required TResult Function(_FailureNoConnection value) noConnection,
     required TResult Function(_FailureCache value) cache,
     required TResult Function(_FailureOTA value) ota,
   }) {
@@ -652,6 +664,7 @@ class _$FailureServerImpl implements _FailureServer {
     TResult? Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult? Function(_FailureNoConnection value)? noConnection,
     TResult? Function(_FailureCache value)? cache,
     TResult? Function(_FailureOTA value)? ota,
   }) {
@@ -667,6 +680,7 @@ class _$FailureServerImpl implements _FailureServer {
     TResult Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult Function(_FailureNoConnection value)? noConnection,
     TResult Function(_FailureCache value)? cache,
     TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
@@ -785,6 +799,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     required TResult Function() connectTimeout,
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
+    required TResult Function() noConnection,
     required TResult Function() cache,
     required TResult Function(String message) ota,
   }) {
@@ -800,6 +815,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     TResult? Function()? connectTimeout,
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
+    TResult? Function()? noConnection,
     TResult? Function()? cache,
     TResult? Function(String message)? ota,
   }) {
@@ -815,6 +831,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     TResult Function()? connectTimeout,
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
+    TResult Function()? noConnection,
     TResult Function()? cache,
     TResult Function(String message)? ota,
     required TResult orElse(),
@@ -834,6 +851,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     required TResult Function(_FailureConnectTimeOut value) connectTimeout,
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
+    required TResult Function(_FailureNoConnection value) noConnection,
     required TResult Function(_FailureCache value) cache,
     required TResult Function(_FailureOTA value) ota,
   }) {
@@ -849,6 +867,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     TResult? Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult? Function(_FailureNoConnection value)? noConnection,
     TResult? Function(_FailureCache value)? cache,
     TResult? Function(_FailureOTA value)? ota,
   }) {
@@ -864,6 +883,7 @@ class _$FailureUnauthorizedImpl implements _FailureUnauthorized {
     TResult Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult Function(_FailureNoConnection value)? noConnection,
     TResult Function(_FailureCache value)? cache,
     TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
@@ -979,6 +999,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     required TResult Function() connectTimeout,
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
+    required TResult Function() noConnection,
     required TResult Function() cache,
     required TResult Function(String message) ota,
   }) {
@@ -994,6 +1015,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     TResult? Function()? connectTimeout,
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
+    TResult? Function()? noConnection,
     TResult? Function()? cache,
     TResult? Function(String message)? ota,
   }) {
@@ -1009,6 +1031,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     TResult Function()? connectTimeout,
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
+    TResult Function()? noConnection,
     TResult Function()? cache,
     TResult Function(String message)? ota,
     required TResult orElse(),
@@ -1028,6 +1051,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     required TResult Function(_FailureConnectTimeOut value) connectTimeout,
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
+    required TResult Function(_FailureNoConnection value) noConnection,
     required TResult Function(_FailureCache value) cache,
     required TResult Function(_FailureOTA value) ota,
   }) {
@@ -1043,6 +1067,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     TResult? Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult? Function(_FailureNoConnection value)? noConnection,
     TResult? Function(_FailureCache value)? cache,
     TResult? Function(_FailureOTA value)? ota,
   }) {
@@ -1058,6 +1083,7 @@ class _$FailureUnexpectedImpl implements _FailureUnexpected {
     TResult Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult Function(_FailureNoConnection value)? noConnection,
     TResult Function(_FailureCache value)? cache,
     TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
@@ -1148,6 +1174,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     required TResult Function() connectTimeout,
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
+    required TResult Function() noConnection,
     required TResult Function() cache,
     required TResult Function(String message) ota,
   }) {
@@ -1163,6 +1190,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     TResult? Function()? connectTimeout,
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
+    TResult? Function()? noConnection,
     TResult? Function()? cache,
     TResult? Function(String message)? ota,
   }) {
@@ -1178,6 +1206,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     TResult Function()? connectTimeout,
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
+    TResult Function()? noConnection,
     TResult Function()? cache,
     TResult Function(String message)? ota,
     required TResult orElse(),
@@ -1197,6 +1226,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     required TResult Function(_FailureConnectTimeOut value) connectTimeout,
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
+    required TResult Function(_FailureNoConnection value) noConnection,
     required TResult Function(_FailureCache value) cache,
     required TResult Function(_FailureOTA value) ota,
   }) {
@@ -1212,6 +1242,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     TResult? Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult? Function(_FailureNoConnection value)? noConnection,
     TResult? Function(_FailureCache value)? cache,
     TResult? Function(_FailureOTA value)? ota,
   }) {
@@ -1227,6 +1258,7 @@ class _$FailureConnectTimeOutImpl implements _FailureConnectTimeOut {
     TResult Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult Function(_FailureNoConnection value)? noConnection,
     TResult Function(_FailureCache value)? cache,
     TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
@@ -1307,6 +1339,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     required TResult Function() connectTimeout,
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
+    required TResult Function() noConnection,
     required TResult Function() cache,
     required TResult Function(String message) ota,
   }) {
@@ -1322,6 +1355,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     TResult? Function()? connectTimeout,
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
+    TResult? Function()? noConnection,
     TResult? Function()? cache,
     TResult? Function(String message)? ota,
   }) {
@@ -1337,6 +1371,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     TResult Function()? connectTimeout,
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
+    TResult Function()? noConnection,
     TResult Function()? cache,
     TResult Function(String message)? ota,
     required TResult orElse(),
@@ -1356,6 +1391,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     required TResult Function(_FailureConnectTimeOut value) connectTimeout,
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
+    required TResult Function(_FailureNoConnection value) noConnection,
     required TResult Function(_FailureCache value) cache,
     required TResult Function(_FailureOTA value) ota,
   }) {
@@ -1371,6 +1407,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     TResult? Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult? Function(_FailureNoConnection value)? noConnection,
     TResult? Function(_FailureCache value)? cache,
     TResult? Function(_FailureOTA value)? ota,
   }) {
@@ -1386,6 +1423,7 @@ class _$FailureSendTimeOutImpl implements _FailureSendTimeOut {
     TResult Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult Function(_FailureNoConnection value)? noConnection,
     TResult Function(_FailureCache value)? cache,
     TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
@@ -1468,6 +1506,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     required TResult Function() connectTimeout,
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
+    required TResult Function() noConnection,
     required TResult Function() cache,
     required TResult Function(String message) ota,
   }) {
@@ -1483,6 +1522,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     TResult? Function()? connectTimeout,
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
+    TResult? Function()? noConnection,
     TResult? Function()? cache,
     TResult? Function(String message)? ota,
   }) {
@@ -1498,6 +1538,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     TResult Function()? connectTimeout,
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
+    TResult Function()? noConnection,
     TResult Function()? cache,
     TResult Function(String message)? ota,
     required TResult orElse(),
@@ -1517,6 +1558,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     required TResult Function(_FailureConnectTimeOut value) connectTimeout,
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
+    required TResult Function(_FailureNoConnection value) noConnection,
     required TResult Function(_FailureCache value) cache,
     required TResult Function(_FailureOTA value) ota,
   }) {
@@ -1532,6 +1574,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     TResult? Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult? Function(_FailureNoConnection value)? noConnection,
     TResult? Function(_FailureCache value)? cache,
     TResult? Function(_FailureOTA value)? ota,
   }) {
@@ -1547,6 +1590,7 @@ class _$FailureReceiveTimeoutImpl implements _FailureReceiveTimeout {
     TResult Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult Function(_FailureNoConnection value)? noConnection,
     TResult Function(_FailureCache value)? cache,
     TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
@@ -1570,6 +1614,172 @@ abstract class _FailureReceiveTimeout implements Failure {
 
   factory _FailureReceiveTimeout.fromJson(Map<String, dynamic> json) =
       _$FailureReceiveTimeoutImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$FailureNoConnectionImplCopyWith<$Res> {
+  factory _$$FailureNoConnectionImplCopyWith(_$FailureNoConnectionImpl value,
+          $Res Function(_$FailureNoConnectionImpl) then) =
+      __$$FailureNoConnectionImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FailureNoConnectionImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$FailureNoConnectionImpl>
+    implements _$$FailureNoConnectionImplCopyWith<$Res> {
+  __$$FailureNoConnectionImplCopyWithImpl(_$FailureNoConnectionImpl _value,
+      $Res Function(_$FailureNoConnectionImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$FailureNoConnectionImpl implements _FailureNoConnection {
+  const _$FailureNoConnectionImpl({final String? $type})
+      : $type = $type ?? 'noConnection';
+
+  factory _$FailureNoConnectionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FailureNoConnectionImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.noConnection()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailureNoConnectionImpl);
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message, int? code) server,
+    required TResult Function(String message) unauthorized,
+    required TResult Function(Object e) unexpected,
+    required TResult Function() connectTimeout,
+    required TResult Function() sendTimeout,
+    required TResult Function() receiveTimeout,
+    required TResult Function() noConnection,
+    required TResult Function() cache,
+    required TResult Function(String message) ota,
+  }) {
+    return noConnection();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String message, int? code)? server,
+    TResult? Function(String message)? unauthorized,
+    TResult? Function(Object e)? unexpected,
+    TResult? Function()? connectTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? receiveTimeout,
+    TResult? Function()? noConnection,
+    TResult? Function()? cache,
+    TResult? Function(String message)? ota,
+  }) {
+    return noConnection?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message, int? code)? server,
+    TResult Function(String message)? unauthorized,
+    TResult Function(Object e)? unexpected,
+    TResult Function()? connectTimeout,
+    TResult Function()? sendTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? noConnection,
+    TResult Function()? cache,
+    TResult Function(String message)? ota,
+    required TResult orElse(),
+  }) {
+    if (noConnection != null) {
+      return noConnection();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FailureServer value) server,
+    required TResult Function(_FailureUnauthorized value) unauthorized,
+    required TResult Function(_FailureUnexpected value) unexpected,
+    required TResult Function(_FailureConnectTimeOut value) connectTimeout,
+    required TResult Function(_FailureSendTimeOut value) sendTimeout,
+    required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
+    required TResult Function(_FailureNoConnection value) noConnection,
+    required TResult Function(_FailureCache value) cache,
+    required TResult Function(_FailureOTA value) ota,
+  }) {
+    return noConnection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FailureServer value)? server,
+    TResult? Function(_FailureUnauthorized value)? unauthorized,
+    TResult? Function(_FailureUnexpected value)? unexpected,
+    TResult? Function(_FailureConnectTimeOut value)? connectTimeout,
+    TResult? Function(_FailureSendTimeOut value)? sendTimeout,
+    TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult? Function(_FailureNoConnection value)? noConnection,
+    TResult? Function(_FailureCache value)? cache,
+    TResult? Function(_FailureOTA value)? ota,
+  }) {
+    return noConnection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FailureServer value)? server,
+    TResult Function(_FailureUnauthorized value)? unauthorized,
+    TResult Function(_FailureUnexpected value)? unexpected,
+    TResult Function(_FailureConnectTimeOut value)? connectTimeout,
+    TResult Function(_FailureSendTimeOut value)? sendTimeout,
+    TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult Function(_FailureNoConnection value)? noConnection,
+    TResult Function(_FailureCache value)? cache,
+    TResult Function(_FailureOTA value)? ota,
+    required TResult orElse(),
+  }) {
+    if (noConnection != null) {
+      return noConnection(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FailureNoConnectionImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _FailureNoConnection implements Failure {
+  const factory _FailureNoConnection() = _$FailureNoConnectionImpl;
+
+  factory _FailureNoConnection.fromJson(Map<String, dynamic> json) =
+      _$FailureNoConnectionImpl.fromJson;
 }
 
 /// @nodoc
@@ -1626,6 +1836,7 @@ class _$FailureCacheImpl implements _FailureCache {
     required TResult Function() connectTimeout,
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
+    required TResult Function() noConnection,
     required TResult Function() cache,
     required TResult Function(String message) ota,
   }) {
@@ -1641,6 +1852,7 @@ class _$FailureCacheImpl implements _FailureCache {
     TResult? Function()? connectTimeout,
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
+    TResult? Function()? noConnection,
     TResult? Function()? cache,
     TResult? Function(String message)? ota,
   }) {
@@ -1656,6 +1868,7 @@ class _$FailureCacheImpl implements _FailureCache {
     TResult Function()? connectTimeout,
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
+    TResult Function()? noConnection,
     TResult Function()? cache,
     TResult Function(String message)? ota,
     required TResult orElse(),
@@ -1675,6 +1888,7 @@ class _$FailureCacheImpl implements _FailureCache {
     required TResult Function(_FailureConnectTimeOut value) connectTimeout,
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
+    required TResult Function(_FailureNoConnection value) noConnection,
     required TResult Function(_FailureCache value) cache,
     required TResult Function(_FailureOTA value) ota,
   }) {
@@ -1690,6 +1904,7 @@ class _$FailureCacheImpl implements _FailureCache {
     TResult? Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult? Function(_FailureNoConnection value)? noConnection,
     TResult? Function(_FailureCache value)? cache,
     TResult? Function(_FailureOTA value)? ota,
   }) {
@@ -1705,6 +1920,7 @@ class _$FailureCacheImpl implements _FailureCache {
     TResult Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult Function(_FailureNoConnection value)? noConnection,
     TResult Function(_FailureCache value)? cache,
     TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),
@@ -1812,6 +2028,7 @@ class _$FailureOTAImpl implements _FailureOTA {
     required TResult Function() connectTimeout,
     required TResult Function() sendTimeout,
     required TResult Function() receiveTimeout,
+    required TResult Function() noConnection,
     required TResult Function() cache,
     required TResult Function(String message) ota,
   }) {
@@ -1827,6 +2044,7 @@ class _$FailureOTAImpl implements _FailureOTA {
     TResult? Function()? connectTimeout,
     TResult? Function()? sendTimeout,
     TResult? Function()? receiveTimeout,
+    TResult? Function()? noConnection,
     TResult? Function()? cache,
     TResult? Function(String message)? ota,
   }) {
@@ -1842,6 +2060,7 @@ class _$FailureOTAImpl implements _FailureOTA {
     TResult Function()? connectTimeout,
     TResult Function()? sendTimeout,
     TResult Function()? receiveTimeout,
+    TResult Function()? noConnection,
     TResult Function()? cache,
     TResult Function(String message)? ota,
     required TResult orElse(),
@@ -1861,6 +2080,7 @@ class _$FailureOTAImpl implements _FailureOTA {
     required TResult Function(_FailureConnectTimeOut value) connectTimeout,
     required TResult Function(_FailureSendTimeOut value) sendTimeout,
     required TResult Function(_FailureReceiveTimeout value) receiveTimeout,
+    required TResult Function(_FailureNoConnection value) noConnection,
     required TResult Function(_FailureCache value) cache,
     required TResult Function(_FailureOTA value) ota,
   }) {
@@ -1876,6 +2096,7 @@ class _$FailureOTAImpl implements _FailureOTA {
     TResult? Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult? Function(_FailureSendTimeOut value)? sendTimeout,
     TResult? Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult? Function(_FailureNoConnection value)? noConnection,
     TResult? Function(_FailureCache value)? cache,
     TResult? Function(_FailureOTA value)? ota,
   }) {
@@ -1891,6 +2112,7 @@ class _$FailureOTAImpl implements _FailureOTA {
     TResult Function(_FailureConnectTimeOut value)? connectTimeout,
     TResult Function(_FailureSendTimeOut value)? sendTimeout,
     TResult Function(_FailureReceiveTimeout value)? receiveTimeout,
+    TResult Function(_FailureNoConnection value)? noConnection,
     TResult Function(_FailureCache value)? cache,
     TResult Function(_FailureOTA value)? ota,
     required TResult orElse(),

@@ -12,6 +12,7 @@ dependencies:
   app_updater_domain:
     path: packages/app_updater_domain
   bloc: ^8.1.2
+  connectivity_plus: ^6.1.0
   device_info_plus: ^10.1.0
   flutter:
     sdk: flutter

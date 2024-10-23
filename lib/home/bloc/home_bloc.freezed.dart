@@ -18,11 +18,14 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HomeState {
   bool get loadingPackageInfo => throw _privateConstructorUsedError;
   bool get loadingBackendInfo => throw _privateConstructorUsedError;
-  bool get installingUpdate => throw _privateConstructorUsedError;
-  bool get installationIsDone => throw _privateConstructorUsedError;
+  bool get downloadingUpdate => throw _privateConstructorUsedError;
+  bool get downloadingIsDone => throw _privateConstructorUsedError;
+  double get downloadingProgress => throw _privateConstructorUsedError;
+  bool get downloadingDialogOpened => throw _privateConstructorUsedError;
   PackageInfo? get packageInfo => throw _privateConstructorUsedError;
   BackendInfo? get backendInfo => throw _privateConstructorUsedError;
-  double get installationProgress => throw _privateConstructorUsedError;
+  List<ConnectivityResult>? get connectivity =>
+      throw _privateConstructorUsedError;
   Failure? get failure => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeState
@@ -40,11 +43,13 @@ abstract class $HomeStateCopyWith<$Res> {
   $Res call(
       {bool loadingPackageInfo,
       bool loadingBackendInfo,
-      bool installingUpdate,
-      bool installationIsDone,
+      bool downloadingUpdate,
+      bool downloadingIsDone,
+      double downloadingProgress,
+      bool downloadingDialogOpened,
       PackageInfo? packageInfo,
       BackendInfo? backendInfo,
-      double installationProgress,
+      List<ConnectivityResult>? connectivity,
       Failure? failure});
 
   $FailureCopyWith<$Res>? get failure;
@@ -67,11 +72,13 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? loadingPackageInfo = null,
     Object? loadingBackendInfo = null,
-    Object? installingUpdate = null,
-    Object? installationIsDone = null,
+    Object? downloadingUpdate = null,
+    Object? downloadingIsDone = null,
+    Object? downloadingProgress = null,
+    Object? downloadingDialogOpened = null,
     Object? packageInfo = freezed,
     Object? backendInfo = freezed,
-    Object? installationProgress = null,
+    Object? connectivity = freezed,
     Object? failure = freezed,
   }) {
     return _then(_value.copyWith(
@@ -83,13 +90,21 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.loadingBackendInfo
           : loadingBackendInfo // ignore: cast_nullable_to_non_nullable
               as bool,
-      installingUpdate: null == installingUpdate
-          ? _value.installingUpdate
-          : installingUpdate // ignore: cast_nullable_to_non_nullable
+      downloadingUpdate: null == downloadingUpdate
+          ? _value.downloadingUpdate
+          : downloadingUpdate // ignore: cast_nullable_to_non_nullable
               as bool,
-      installationIsDone: null == installationIsDone
-          ? _value.installationIsDone
-          : installationIsDone // ignore: cast_nullable_to_non_nullable
+      downloadingIsDone: null == downloadingIsDone
+          ? _value.downloadingIsDone
+          : downloadingIsDone // ignore: cast_nullable_to_non_nullable
+              as bool,
+      downloadingProgress: null == downloadingProgress
+          ? _value.downloadingProgress
+          : downloadingProgress // ignore: cast_nullable_to_non_nullable
+              as double,
+      downloadingDialogOpened: null == downloadingDialogOpened
+          ? _value.downloadingDialogOpened
+          : downloadingDialogOpened // ignore: cast_nullable_to_non_nullable
               as bool,
       packageInfo: freezed == packageInfo
           ? _value.packageInfo
@@ -99,10 +114,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.backendInfo
           : backendInfo // ignore: cast_nullable_to_non_nullable
               as BackendInfo?,
-      installationProgress: null == installationProgress
-          ? _value.installationProgress
-          : installationProgress // ignore: cast_nullable_to_non_nullable
-              as double,
+      connectivity: freezed == connectivity
+          ? _value.connectivity
+          : connectivity // ignore: cast_nullable_to_non_nullable
+              as List<ConnectivityResult>?,
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -136,11 +151,13 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   $Res call(
       {bool loadingPackageInfo,
       bool loadingBackendInfo,
-      bool installingUpdate,
-      bool installationIsDone,
+      bool downloadingUpdate,
+      bool downloadingIsDone,
+      double downloadingProgress,
+      bool downloadingDialogOpened,
       PackageInfo? packageInfo,
       BackendInfo? backendInfo,
-      double installationProgress,
+      List<ConnectivityResult>? connectivity,
       Failure? failure});
 
   @override
@@ -162,11 +179,13 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? loadingPackageInfo = null,
     Object? loadingBackendInfo = null,
-    Object? installingUpdate = null,
-    Object? installationIsDone = null,
+    Object? downloadingUpdate = null,
+    Object? downloadingIsDone = null,
+    Object? downloadingProgress = null,
+    Object? downloadingDialogOpened = null,
     Object? packageInfo = freezed,
     Object? backendInfo = freezed,
-    Object? installationProgress = null,
+    Object? connectivity = freezed,
     Object? failure = freezed,
   }) {
     return _then(_$HomeStateImpl(
@@ -178,13 +197,21 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.loadingBackendInfo
           : loadingBackendInfo // ignore: cast_nullable_to_non_nullable
               as bool,
-      installingUpdate: null == installingUpdate
-          ? _value.installingUpdate
-          : installingUpdate // ignore: cast_nullable_to_non_nullable
+      downloadingUpdate: null == downloadingUpdate
+          ? _value.downloadingUpdate
+          : downloadingUpdate // ignore: cast_nullable_to_non_nullable
               as bool,
-      installationIsDone: null == installationIsDone
-          ? _value.installationIsDone
-          : installationIsDone // ignore: cast_nullable_to_non_nullable
+      downloadingIsDone: null == downloadingIsDone
+          ? _value.downloadingIsDone
+          : downloadingIsDone // ignore: cast_nullable_to_non_nullable
+              as bool,
+      downloadingProgress: null == downloadingProgress
+          ? _value.downloadingProgress
+          : downloadingProgress // ignore: cast_nullable_to_non_nullable
+              as double,
+      downloadingDialogOpened: null == downloadingDialogOpened
+          ? _value.downloadingDialogOpened
+          : downloadingDialogOpened // ignore: cast_nullable_to_non_nullable
               as bool,
       packageInfo: freezed == packageInfo
           ? _value.packageInfo
@@ -194,10 +221,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.backendInfo
           : backendInfo // ignore: cast_nullable_to_non_nullable
               as BackendInfo?,
-      installationProgress: null == installationProgress
-          ? _value.installationProgress
-          : installationProgress // ignore: cast_nullable_to_non_nullable
-              as double,
+      connectivity: freezed == connectivity
+          ? _value._connectivity
+          : connectivity // ignore: cast_nullable_to_non_nullable
+              as List<ConnectivityResult>?,
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -212,33 +239,48 @@ class _$HomeStateImpl implements _HomeState {
   const _$HomeStateImpl(
       {required this.loadingPackageInfo,
       required this.loadingBackendInfo,
-      required this.installingUpdate,
-      required this.installationIsDone,
+      required this.downloadingUpdate,
+      required this.downloadingIsDone,
+      required this.downloadingProgress,
+      required this.downloadingDialogOpened,
       this.packageInfo,
       this.backendInfo,
-      required this.installationProgress,
-      this.failure});
+      final List<ConnectivityResult>? connectivity,
+      this.failure})
+      : _connectivity = connectivity;
 
   @override
   final bool loadingPackageInfo;
   @override
   final bool loadingBackendInfo;
   @override
-  final bool installingUpdate;
+  final bool downloadingUpdate;
   @override
-  final bool installationIsDone;
+  final bool downloadingIsDone;
+  @override
+  final double downloadingProgress;
+  @override
+  final bool downloadingDialogOpened;
   @override
   final PackageInfo? packageInfo;
   @override
   final BackendInfo? backendInfo;
+  final List<ConnectivityResult>? _connectivity;
   @override
-  final double installationProgress;
+  List<ConnectivityResult>? get connectivity {
+    final value = _connectivity;
+    if (value == null) return null;
+    if (_connectivity is EqualUnmodifiableListView) return _connectivity;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final Failure? failure;
 
   @override
   String toString() {
-    return 'HomeState(loadingPackageInfo: $loadingPackageInfo, loadingBackendInfo: $loadingBackendInfo, installingUpdate: $installingUpdate, installationIsDone: $installationIsDone, packageInfo: $packageInfo, backendInfo: $backendInfo, installationProgress: $installationProgress, failure: $failure)';
+    return 'HomeState(loadingPackageInfo: $loadingPackageInfo, loadingBackendInfo: $loadingBackendInfo, downloadingUpdate: $downloadingUpdate, downloadingIsDone: $downloadingIsDone, downloadingProgress: $downloadingProgress, downloadingDialogOpened: $downloadingDialogOpened, packageInfo: $packageInfo, backendInfo: $backendInfo, connectivity: $connectivity, failure: $failure)';
   }
 
   @override
@@ -250,16 +292,21 @@ class _$HomeStateImpl implements _HomeState {
                 other.loadingPackageInfo == loadingPackageInfo) &&
             (identical(other.loadingBackendInfo, loadingBackendInfo) ||
                 other.loadingBackendInfo == loadingBackendInfo) &&
-            (identical(other.installingUpdate, installingUpdate) ||
-                other.installingUpdate == installingUpdate) &&
-            (identical(other.installationIsDone, installationIsDone) ||
-                other.installationIsDone == installationIsDone) &&
+            (identical(other.downloadingUpdate, downloadingUpdate) ||
+                other.downloadingUpdate == downloadingUpdate) &&
+            (identical(other.downloadingIsDone, downloadingIsDone) ||
+                other.downloadingIsDone == downloadingIsDone) &&
+            (identical(other.downloadingProgress, downloadingProgress) ||
+                other.downloadingProgress == downloadingProgress) &&
+            (identical(
+                    other.downloadingDialogOpened, downloadingDialogOpened) ||
+                other.downloadingDialogOpened == downloadingDialogOpened) &&
             (identical(other.packageInfo, packageInfo) ||
                 other.packageInfo == packageInfo) &&
             (identical(other.backendInfo, backendInfo) ||
                 other.backendInfo == backendInfo) &&
-            (identical(other.installationProgress, installationProgress) ||
-                other.installationProgress == installationProgress) &&
+            const DeepCollectionEquality()
+                .equals(other._connectivity, _connectivity) &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -268,11 +315,13 @@ class _$HomeStateImpl implements _HomeState {
       runtimeType,
       loadingPackageInfo,
       loadingBackendInfo,
-      installingUpdate,
-      installationIsDone,
+      downloadingUpdate,
+      downloadingIsDone,
+      downloadingProgress,
+      downloadingDialogOpened,
       packageInfo,
       backendInfo,
-      installationProgress,
+      const DeepCollectionEquality().hash(_connectivity),
       failure);
 
   /// Create a copy of HomeState
@@ -288,11 +337,13 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {required final bool loadingPackageInfo,
       required final bool loadingBackendInfo,
-      required final bool installingUpdate,
-      required final bool installationIsDone,
+      required final bool downloadingUpdate,
+      required final bool downloadingIsDone,
+      required final double downloadingProgress,
+      required final bool downloadingDialogOpened,
       final PackageInfo? packageInfo,
       final BackendInfo? backendInfo,
-      required final double installationProgress,
+      final List<ConnectivityResult>? connectivity,
       final Failure? failure}) = _$HomeStateImpl;
 
   @override
@@ -300,15 +351,19 @@ abstract class _HomeState implements HomeState {
   @override
   bool get loadingBackendInfo;
   @override
-  bool get installingUpdate;
+  bool get downloadingUpdate;
   @override
-  bool get installationIsDone;
+  bool get downloadingIsDone;
+  @override
+  double get downloadingProgress;
+  @override
+  bool get downloadingDialogOpened;
   @override
   PackageInfo? get packageInfo;
   @override
   BackendInfo? get backendInfo;
   @override
-  double get installationProgress;
+  List<ConnectivityResult>? get connectivity;
   @override
   Failure? get failure;
 

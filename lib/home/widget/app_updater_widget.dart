@@ -15,7 +15,8 @@ class AppUpdaterWidget extends StatelessWidget {
     return BlocConsumer<HomeBloc, HomeState>(
       buildWhen: (previous, current) =>
           previous.loadingPackageInfo != current.loadingPackageInfo ||
-          previous.loadingBackendInfo != current.loadingBackendInfo,
+          previous.loadingBackendInfo != current.loadingBackendInfo ||
+          previous.connectivity != current.connectivity,
       builder: (context, state) {
         if (state.updateApp) {
           return Container(
@@ -26,10 +27,19 @@ class AppUpdaterWidget extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Text('${l10n.newAppInfo} ${state.backendInfo!.apkVersion}'),
+                Text(
+                  '${l10n.newAppInfo} ${state.backendInfo!.apkVersion}',
+                  style: texts.bodyMedium?.copyWith(
+                    color: colors.secondary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
                 const SizedBox(height: 10),
                 ElevatedButton(
-                  onPressed: state.loading ? null : bloc.updateApp,
+                  onPressed: (state.loading || !state.hasConnection())
+                      ? null
+                      : bloc.downloadUpdate,
                   child: Text(
                     l10n.btnUpdateApp.toUpperCase(),
                     style: texts.bodyMedium!.copyWith(
@@ -41,7 +51,14 @@ class AppUpdaterWidget extends StatelessWidget {
             ),
           );
         }
-        return const Text('No hay actualizaciones disponibles');
+        return Text(
+          l10n.noAvailableUpdates,
+          style: texts.bodyMedium?.copyWith(
+            color: colors.secondary,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
+        );
       },
       listener: (BuildContext context, HomeState state) {},
     );

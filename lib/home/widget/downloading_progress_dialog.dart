@@ -1,8 +1,8 @@
 import 'package:app_updater/app/app.dart';
 import 'package:app_updater/home/home.dart';
 
-class InstallationProgressDialog extends StatelessWidget {
-  const InstallationProgressDialog({
+class DownloadingProgressDialog extends StatelessWidget {
+  const DownloadingProgressDialog({
     required this.message,
     super.key,
   });
@@ -13,6 +13,8 @@ class InstallationProgressDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.colors;
     final texts = context.texts;
+
+    final bloc = context.read<HomeBloc>();
 
     return AlertDialog(
       contentPadding: const EdgeInsets.all(24),
@@ -26,16 +28,20 @@ class InstallationProgressDialog extends StatelessWidget {
         textAlign: TextAlign.center,
       ),
       content: BlocConsumer<HomeBloc, HomeState>(
+        buildWhen: (previous, current) =>
+            previous.downloadingIsDone != current.downloadingIsDone ||
+            previous.downloadingProgress != current.downloadingProgress ||
+            current.failure != null,
         listener: (context, state) {
-          print(state.installationProgress);
-
-          if (context.mounted && state.installationIsDone) {
+          if (state.downloadingDialogOpened &&
+              (state.downloadingIsDone || state.failure != null)) {
+            bloc.downloadingDialogOpened(value: false);
             Navigator.pop(context);
           }
         },
         builder: (context, state) {
           return LinearProgressIndicator(
-            value: state.installationProgress / 100,
+            value: state.downloadingProgress / 100,
             backgroundColor: colors.surface,
             valueColor: AlwaysStoppedAnimation<Color>(colors.primary),
           );
@@ -52,9 +58,9 @@ class InstallationProgressDialog extends StatelessWidget {
     return showDialog<T>(
       barrierDismissible: false,
       context: context,
-      builder: (_) => RepositoryProvider(
+      builder: (dialogContext) => RepositoryProvider(
         create: (_) => bloc,
-        child: InstallationProgressDialog(
+        child: DownloadingProgressDialog(
           message: message,
         ),
       ),

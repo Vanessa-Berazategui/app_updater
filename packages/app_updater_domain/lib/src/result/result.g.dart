@@ -84,6 +84,18 @@ Map<String, dynamic> _$$FailureReceiveTimeoutImplToJson(
       'runtimeType': instance.$type,
     };
 
+_$FailureNoConnectionImpl _$$FailureNoConnectionImplFromJson(
+        Map<String, dynamic> json) =>
+    _$FailureNoConnectionImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$FailureNoConnectionImplToJson(
+        _$FailureNoConnectionImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
 _$FailureCacheImpl _$$FailureCacheImplFromJson(Map<String, dynamic> json) =>
     _$FailureCacheImpl(
       $type: json['runtimeType'] as String?,

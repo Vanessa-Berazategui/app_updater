@@ -17,6 +17,8 @@ sealed class Failure with _$Failure {
 
   const factory Failure.receiveTimeout() = _FailureReceiveTimeout;
 
+  const factory Failure.noConnection() = _FailureNoConnection;
+
   const factory Failure.cache() = _FailureCache;
 
   const factory Failure.ota({
@@ -35,6 +37,7 @@ extension FailureX on Failure {
         connectTimeout: (connectTimeout) => 'Connect Timeout error',
         sendTimeout: (sendTimeout) => 'Send Timeout error',
         receiveTimeout: (receiveTimeout) => 'Receive Timeout error',
+        noConnection: (noConnection) => 'No connection available',
         cache: (cache) => 'Cache error',
         ota: (ota) => 'Failed to make OTA update ${ota.message}',
       );

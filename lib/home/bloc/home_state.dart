@@ -5,20 +5,23 @@ class HomeState with _$HomeState {
   const factory HomeState({
     required bool loadingPackageInfo,
     required bool loadingBackendInfo,
-    required bool installingUpdate,
-    required bool installationIsDone,
+    required bool downloadingUpdate,
+    required bool downloadingIsDone,
+    required double downloadingProgress,
+    required bool downloadingDialogOpened,
     PackageInfo? packageInfo,
     BackendInfo? backendInfo,
-    required double installationProgress,
+    List<ConnectivityResult>? connectivity,
     Failure? failure,
   }) = _HomeState;
 
   factory HomeState.init() => const HomeState(
         loadingPackageInfo: false,
         loadingBackendInfo: false,
-        installingUpdate: false,
-        installationIsDone: false,
-        installationProgress: 0,
+        downloadingUpdate: false,
+        downloadingIsDone: false,
+        downloadingDialogOpened: false,
+        downloadingProgress: 0,
       );
 }
 
@@ -35,4 +38,7 @@ extension HomeStateX on HomeState {
 
     return false;
   }
+
+  bool hasConnection() =>
+      connectivity != null && !connectivity!.contains(ConnectivityResult.none);
 }

@@ -27,5 +27,9 @@
   "downloadindNewVersion": "Downloading, please wait ... ",
   "@downloadindNewVersion": {
     "description": "Text shown in the downloading process"
+  },
+  "noAvailableUpdates": "No updates available",
+  "@noAvailableUpdates": {
+    "description": "Text shown if there is no updates"
   }
 }
